@@ -154,7 +154,7 @@ module.exports = {
       template: __dirname + '/index.html',
       inject: false,
       templateParameters: {
-        cdnBase: isDevelopment ? '' : '/ide-startup-lite/',
+        cdnBase: isDevelopment ? '' : '/',
       },
     }),
     new MiniCssExtractPlugin({

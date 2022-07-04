@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.lite.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.lite.config.js --progress",
-    "compile:ext-worker": "cross-env NODE_ENV=production webpack --config=webpack.worker.config.js --progress"
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --config ./webpack.lite.config.js",
+    "build": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.lite.config.js --progress",
+    "compile:ext-worker": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config=webpack.worker.config.js --progress",
+    "tauri": "tauri"
   },
   "resolutions": {
     "vscode-languageserver-protocol": "3.16.0",
@@ -82,6 +83,7 @@
   "devDependencies": {
     "@ant-design/dark-theme": "^1.0.3",
     "@babel/core": "^7.14.8",
+    "@tauri-apps/cli": "^1.0.2",
     "@types/axios": "^0.14.0",
     "@types/koa": "^2.0.50",
     "@types/koa-static": "^4.0.1",
